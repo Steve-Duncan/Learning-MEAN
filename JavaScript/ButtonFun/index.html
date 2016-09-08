@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Button Fun</title>
+	<script type="text/javascript" src='./jquery.min.js'></script>
+	<style type="text/css">
+		button{
+			background-color: blue;
+			color: white;
+		}
+	</style>
+	<script style="text/javascript">
+		
+		$(document).ready(function(){
+		 	
+			//get the button color
+			var color = $("button").css("background-color");
+			//call the toggle function
+			toggle_color(color);
+		});
+
+
+		function toggle_color(color){
+
+			//set hover event
+		 	$("button").hover(function(){				
+				$("button").css("background-color", "green");
+		 	 }, function(){
+		 		$("button").css("background-color", color);	
+		 	});
+			
+			$("button").click(function(){
+				// toggle the button color
+				if (color=='rgb(0, 0, 255)'){
+					$(this).css("background-color", "red");
+				} else {
+					$(this).css("background-color", "blue");
+				};
+				// reset color variable to current color
+				color = $(this).css("background-color");
+				
+			});		
+		};
+	</script>
+</head>
+<body>
+	<button>Button</button>
+</body>
+</html>
+
