@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Add Car Info</title>
+	<link href="./../static/css/styles.css" rel="stylesheet">
+</head>
+<body>
+	<div>
+		<h2>Add car information:</h2>
+		<form class="left" action='/process' method='post'>
+			<label for="car">Make:</label>
+			<input type="text" name="make">
+
+			<label for="model">Model:</label>
+			<input type="text" name="model">
+
+			<p>Info:</p>
+			<textarea name="info" id="info"></textarea>
+			<p><button type="submit" id="btn_info">Submit</button></p>
+		</form>
+	</div>
+	<button><a href="/">Home</a></button>
+
+
+</body>
+</html>
