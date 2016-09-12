@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+	<body>
+		<div class="result container">
+			<h4>Submitted Information</h4>
+			<form action="">
+				<p><span>Name:</span> <%= result.name %></p>
+				<p><span>Dojo Location:</span> <%= result.location %></p>
+				<p><span>Favorite Language:</span> <%= result.language %></p>
+				<p>Comment:</p>
+				<textarea name="comment" id="comment"><%= result.comment %></textarea>
+			</form>
+			<p><button><a href="/" id="return">Go Back</a></button></p>
+		</div>
+	</body>
+</html>

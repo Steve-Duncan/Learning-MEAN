@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+	<body>
+		<div class="container">
+			<form action='/process' method='post'>
+				<label for="name">Your name:</label>
+				<input type="text" name="name">
+				<label for="location">Dojo Location:</label>
+				<select name="location">
+					<option value="" style="display:none;"></option>
+					<option value="Portland">Portland</option>
+					<option value="Seattle">Seattle</option>
+					<option value="Timbuktu">Timbktu</option>
+				</select>
+				<label for="language">Favorite Language:</label>
+				<select name="language" value=''>
+					<option value="" style="display:none;"></option>
+					<option value="Python">Python</option>
+					<option value="Javascript">Javacript</option>
+					<option value="PigLatin">Pig Latin</option>
+				</select>
+				<p>Comment (optional):</p>
+				<textarea name="comment" id="comment"></textarea>
+				<p><button type="submit" id="survey">Submit</button></p>
+			</form>
+		</div>
+	</body>
+
+</html>
