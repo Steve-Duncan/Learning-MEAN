@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script type='text/javascript'>
+			$(document).ready(function(){
+				var socket = io.connect();
+				$('button').click(function (){
+					//this goes to the server
+	   				socket.emit('button_clicked',{
+						name: $('#name').val(),
+						location: $('#location').val(),
+						language: $('#language').val(),
+						comment: $('#comment').val()
+					});
+					return false;
+				});
+
+				//this comes back from the server
+				socket.on('server_response', function (data){
+				    console.log('The server says: ' + data.name + ', ' + data.location + ', ' + data.language);
+				    var ret_msg = '{ name: ' + data.name + ', location: ' + data.location + ', language: ' + data.language + ', comment: ' + data.comment + ' }';
+				    $('.return').html('<p>You emitted the following information to the server: ' + ret_msg + '</p>' );
+				    $('.return').append('<p>Your lucky number emitted by the server is ' + data.luckyNum + '.</p>' );
+				    $('.return').show();				    
+				});
+			});
+
+	</script>
+</head>
+	
+	<body>
+		<div class="return"></div>
+		<div class="container">
+			
+			<form>
+				<!-- action='/process' method='post' -->
+				<label for="name">Your name:</label>
+				<input type="text" name="name" id='name'>
+				<label for="location">Dojo Location:</label>
+				<select name="location" id='location'>
+					<option value="" style="display:none;"></option>
+					<option value="Portland">Portland</option>
+					<option value="Seattle">Seattle</option>
+					<option value="Timbuktu">Timbktu</option>
+				</select>
+				<label for="language">Favorite Language:</label>
+				<select name="language" value='' id='language'>
+					<option value="" style="display:none;"></option>
+					<option value="Python">Python</option>
+					<option value="Javascript">Javacript</option>
+					<option value="PigLatin">Pig Latin</option>
+				</select>
+				<p>Comment (optional):</p>
+				<textarea name="comment" id="comment"></textarea>
+				<p><button type="submit" id="survey">Submit</button></p>
+			</form>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,70 @@
+/*CSS reset settings */
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma, sans-serif;
+}
+
+.container{
+	width: 400px;
+	margin: 10% auto;
+	border: 1px solid black;
+	display: block;
+}
+
+form{
+	display: inline-block;
+	vertical-align: top;
+	padding: 25px 0px 0px 20px;
+}
+form span{
+	display: inline-block;
+}
+label, input,{
+	display: inline-block;
+	margin-bottom: 15px;
+}
+label{
+	width: 150px;
+}
+select{
+	width: 165px;
+}
+textarea{
+	margin-top: 10px;
+}
+button{
+	float: right;
+	margin-bottom: 10px;
+	padding: 2px 5px 2px 5px;
+	background-color: blue;
+	color: white;
+	border: 1px solid black;
+	box-shadow: 3px 3px black;
+}
+
+.result span {
+	display: inline-block;
+	width: 60%;
+}
+.result form{
+	display: inline-block;
+	vertical-align: top;
+	width: 350px;
+}
+.result h4{
+	text-decoration: underline;
+}
+.result a{
+	color: white;
+}
+
+.return{
+	width: 400px;
+	border: 1px solid black;
+	background-color: #95F791;
+	margin: 10% auto;
+	padding: 15px;
+
+	display: none;
+}
