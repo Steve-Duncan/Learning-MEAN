@@ -1,0 +1,35 @@
+/*CSS reset settings */
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma, sans-serif;
+}
+
+.container{
+	margin: 20% auto;
+	width: 650px;
+	height: 400px;
+	text-align: center;
+	padding: 10px;
+	border: 1px solid black;
+}
+#btn_epic{
+	width: 250px;
+	padding: 25px 0 25px 0;
+	border-radius: 25px;
+	background-color: blue;
+	color: white;
+	border: 1px solid black;
+}
+#btn_reset{
+	float: right;
+	margin-top: 75px;
+	padding: 3px 10px 3px 10px;
+	background-color: red;
+	color: white;
+	border: 1px solid black;
+	box-shadow: 3px 3px black;
+}
+h4{
+	margin-top: 75px;
+}
