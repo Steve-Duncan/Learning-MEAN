@@ -1,0 +1,56 @@
+/*CSS reset settings */
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma, sans-serif;
+}
+
+.container{
+	text-align: left;
+}
+.prompt{
+	margin: 10% auto;
+	padding: 10px 20px 15px 20px;
+	width: 30%;
+	border: 1px solid black;
+	overflow: auto;
+}
+.prompt p{
+	margin-bottom: 0px;
+}
+input{
+	width: 100%;
+	border: 1px solid black;
+}
+button{
+	float: right;
+	margin-top: 10px;
+	padding: 3px 10px 3px 10px;
+	border: 1px solid black;
+	box-shadow: 3px 3px black;
+}
+
+#btn_ok{
+	margin-right: 10px;
+}
+
+.chat_container{
+	display: flex;
+	flex-wrap: wrap;
+}
+.chat{
+	display: inline-block;
+	vertical-align: top;
+	width: 200px;
+	height: 200px;
+	margin: 25px;
+	border: 1px solid black;
+}
+.chat p{
+	text-align: center;
+	padding: 5px;
+	background-color: gray;
+	color: white;
+
+	border-bottom: 1px solid black;
+}
