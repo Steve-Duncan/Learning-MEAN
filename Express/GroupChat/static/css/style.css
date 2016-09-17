@@ -1,0 +1,47 @@
+/*CSS reset settings */
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma, sans-serif;
+}
+.container{
+	margin: 10% auto;
+	width: 50%;
+	text-align: left;
+	display: none;
+	border: 1px solid red;
+}
+.prompt{
+	margin: 10% auto;
+	padding: 10px 20px 15px 20px;
+	width: 30%;
+	border: 1px solid black;
+	overflow: auto;
+}
+.prompt p{
+	margin-bottom: 0px;
+}
+input{
+	width: 100%;
+	margin-top: 20px;
+	border: 1px solid black;
+}
+button{
+	float: right;
+	margin-top: 10px;
+	padding: 3px 10px 3px 10px;
+	border: 1px solid black;
+	box-shadow: 3px 3px black;
+}
+#btn_ok{
+	margin-right: 10px;
+}
+.messages{
+	height: 300px;
+	overflow: auto;
+	width: 100%;
+	border: 1px solid black;
+}
+#btn_send{
+	margin-bottom: 10px;
+}
