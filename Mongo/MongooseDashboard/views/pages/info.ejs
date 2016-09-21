@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include ../partials/head %>
+</head>
+
+<!-- <nav class='update_nav'>	
+	<a href='/'>Back</a>
+</nav> -->
+
+<body>
+	<div class="info container">
+		<a href='/'>Back</a>
+		<h1>Animals</h1>
+			
+			<form action="/animals/<%= animal[0]._id %>/edit" method='post' >
+				<p><label for="type">Type: </label>
+					<input type="text" name='type' class='input' value="<%= animal[0].type %>" disabled>
+				</p>
+				<p><label for="color">Color: </label>
+					<input type="text" name='color' class='input' value="<%= animal[0].color %>" disabled>
+				</p>
+				<p><label for="weight">Weight: </label>
+					<input type="text" name='weight' class='input' value="<%= animal[0].weight %>" disabled>(pounds)
+				</p>
+				<p><label for="range">Range: </label>						
+					<input type="text" name='range' class='input' value="<%= animal[0].range %>" disabled>
+				</p>
+				<input type="submit" id='btn_save' value='Save'>
+			</form>
+
+			<form action="/animals/<%= animal[0]._id %>/edit" method='get' >
+				<input type="submit"  class='frm_btn' id='btn_edit' value='Edit'>
+			</form>
+
+			<form action="/animals/<%= animal[0]._id %>/delete" method='post' >
+				<input type="submit"  class='frm_btn' id='btn_delete' value='Delete'>
+			</form>
+			
+	</div>
+
+</body>
+</html>
