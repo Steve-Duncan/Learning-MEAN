@@ -1,0 +1,17 @@
+
+<h1><%= message %></h1>
+
+
+<% for (var e in errors.errors) { %>
+
+	<% if(e=='name') { %>
+		<h2><%= errors.errors.name.message  %></h2>
+	<% } %>
+
+	<% if(e=='quote') { %>
+		<h2><%= errors.errors.quote.message  %></h2>
+	<% } %>
+
+<% } %>
+
+<button><a href="/">Try again</a></button>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+  	<div class="quotes container">
+    
+    	<h2>Here are the awesome quotes!</h2>
+    	
+      <% for (var q in quotes){ %>
+        <div>
+          
+          <% var quote_date = new Date(quotes[q].createdAt).toDateString() %>
+          <% var quote_time = new Date(quotes[q].createdAt).toLocaleTimeString() %>
+          <p>"<%= quotes[q].quote %>"</p>
+          <p class='author'>-<%= quotes[q].name %> <%= quote_time %> <%= quote_date %></p>
+          
+          <hr>
+        </div>
+      <% } %>
+
+      <button><a href="/">Back</a></button>
+    </div>
+  </body>
+</html>
+

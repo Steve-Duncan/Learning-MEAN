@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+  	<div class="container">
+    	<h2>Welcome to <%= title %></h2>
+    	<form action="/quotes" method='post'>
+    		<p>
+          <label >Your name:</label>
+    		  <input type="text" name='name' >
+        </p>
+    		<p>
+          <label >Your quote:</label>
+    		  <textarea class='yellow' name='quote' ></textarea>
+        </p>
+    		<p class='submits'>
+          <input type="submit" id='add_quote' value='Add my quote!'>
+          <button id='skip_quote'><a href="/quotes">Skip to quotes!</a></button>
+        </p>
+    	</form>
+    </div>
+  </body>
+</html>

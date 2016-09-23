@@ -1,0 +1,57 @@
+/*CSS reset settings */
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma, sans-serif;
+	/*border: 1px solid red;*/
+}
+
+.container{
+	width: 450px;
+	min-height: 350px;
+	margin: 10% auto;
+	padding-bottom: 10px;
+	border: 1px solid blue;
+}
+form{
+	min-height: 200px;
+	/*border: 1px solid black;*/
+
+}
+textarea{
+	/*background-color: green;*/
+	width: 60%;
+	height: 150px;
+}
+input, a{	
+	/*background-color: red;*/
+	padding: 1px 5px 1px 5px;
+}
+a{
+	color: black;
+}
+input[name='name']{
+	width: 20%;
+}
+label {
+  display: inline-block;
+  width: 100px;
+  vertical-align: top;
+}​
+p{		
+	/*do not delete; without this, the buttons on index.ejs don't align properly;
+		I don't know why that is...
+	*/
+}
+.submits{
+	text-align: center;
+}
+#add_quote{
+	margin-right: 100px;
+}
+.author{
+	margin-left: 60px;
+}
+hr{
+	size: 6;
+}
