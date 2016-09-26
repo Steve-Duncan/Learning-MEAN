@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+  	<div class="container">
+	    <h3><%= title %></h3>
+	    <hr>
+
+	    <% if (typeof(errors) != 'undefined' ) { %>
+			<ul class="errors">
+				<% for (var x in errors) { %>
+					<li><%= errors[x].message %></li>
+				<% } %>
+			</ul>
+		<% } %>
+
+	    <div class="add_post">
+	    	<form class='frm_add' id='boot_over' action="/new_post" method='post'>
+	    		<label for="author">Name:</label>
+	    		<input type="text" name='author'>
+	    		<label for="text">Message:</label>
+	    		<textarea name="text"></textarea>
+	    		<input type="submit" value='Post message'>
+	    		
+	    	</form>
+	    </div>
+
+	    <div class="posts">
+	    	<% for (var p in posts) { %>
+		    	<p id='author'><h4>Name: <%= posts[p].author %></h4></p>
+		    	<p><h4>Message: <%= posts[p].text %></h4></p>
+	    	
+				<div class="comments">
+		    		<% if (posts[p].comments.length > 0) { %>
+		    			<% for (var c=0; c < posts[p].comments.length; c++) { %>
+							<p><h5>Name:<%= posts[p].comments[c].author %> </h5></p>
+							<p><h5>Comment:<%= posts[p].comments[c].text %> </h5></p> 
+		    			<% } %>
+		    		<% } %>
+			    	<form class='frm_comment' action="/posts/<%= posts[p]._id %>" method='post'>
+			    		<label for="author">Name:</label>
+			    		<input type="text" name='author'>
+			    		<label for="text">Comment:</label>
+			    		<textarea name="text"></textarea>
+			    		<input type="submit" value='Post comment'>    		
+			    	</form>
+		    	</div>
+	    	<% } %>
+	    </div>
+	    	 	    
+    </div>
+  </body>
+</html>
