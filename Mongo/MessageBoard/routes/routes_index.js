@@ -6,7 +6,7 @@ module.exports=function (app, Post, Comment){
 		//get users from database
 		Post.find({}).populate('comments').exec(function (err, posts){
 	  		res.render('pages/index', { title: 'The Dojo Message Board', posts: posts, errors: msg_errors });
-	  		msg_errors = undefined;
+
 		});
 	});
 
