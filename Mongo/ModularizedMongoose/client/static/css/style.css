@@ -1,0 +1,48 @@
+/*CSS reset settings */
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma, sans-serif;
+}
+.container{
+	width: 300px;
+	margin: 10% auto;
+	padding-bottom: 10px;
+	border: 1px solid blue;
+}
+#btn_add{
+	margin-top: 20px;
+}
+h1{
+	text-decoration: underline;
+}
+form{
+	width: 250px;
+	padding: 5px;
+	overflow: auto;
+}
+label, input{
+	display: inline-block;
+}
+label{
+	width: 30%;
+}
+input{
+	width: 55%;
+}
+input[name='weight']{
+	width: 20%;
+}
+.index input{
+	float: right;
+	margin-bottom: 10px;
+}
+a{
+	float: right;
+}
+ .frm_btn, #btn_add{
+ 	margin-left: 75px;
+ }
+ #btn_save{
+	display: none;
+}

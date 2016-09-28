@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include ./partials/head %>
+</head>
+<body>
+	<div class="index container">
+		<h1>Animals</h1>
+		<% for (var a in animals){ %>
+			
+			<form action="/animals/<%= animals[a]._id %>" method='get' >
+				<%= animals[a].type %>
+				<input type="submit" value='Info' id='btn_info'>
+			</form>
+			
+		<% } %>
+		<form action='/animals' method='get' >
+			<input type="submit" id='btn_showAdd' value='Add an Animal'>
+		</form>
+		
+	</div>
+
+</body>
+</html>

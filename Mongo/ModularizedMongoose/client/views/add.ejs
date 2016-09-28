@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include ./partials/head %>
+</head>
+
+<body>
+	<div class='add container'>
+		<a href='/'>Back</a>
+		<h1>Animals</h1>
+		<h2>Add a new animal</h2>
+		<form action="/animals" method='post'>
+			<p><label for="type">Type:</label>
+				<input type="text" class='input' name='type'>
+			</p>
+			<p><label for="color">Color:</label>
+				<input type="text" class='input'  name='color'>
+			</p>
+			<p><label for="weight">Weight:</label>
+				<input type="text" class='input'  name='weight'>(pounds)
+			</p>
+			<p><label for="range">Range:</label>
+				<input type="text" class='input'  name='range'>
+			</p>
+			<input type="submit" id='btn_add' value='Add Animal'>
+		</form>
+	</div>
+</body>
+
+</html>
