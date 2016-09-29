@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="foodApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Controller and Directives</title>
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'></script>
+	<link rel="stylesheet" href="style.css">
+	<script>
+		//create module
+		var foodModule = angular.module('foodApp', []);
+		//attach a controller
+		foodModule.controller('foodItemsController', ['$scope', function ($scope){
+			$scope.foodItems=[];
+
+			//method to add item to array
+			$scope.addFoodItem = function(){
+				$scope.foodItems.push($scope.newFoodItem);
+				$scope.newFoodItem = [];
+			}
+
+			//method to filter by matching search string
+			$scope.startsWith = function (str, prefix) {
+	    	return str.toLowerCase().indexOf(prefix.toLowerCase()) === 0;
+			}
+
+		}]);
+
+	</script>
+</head>
+<body ng-controller='foodItemsController'>
+	<div >
+		<form >
+			<label for="item">Favorite Food</label>
+			<input type="text" ng-model='newFoodItem'>
+			<input type="submit" value='Add Food' ng-click='addFoodItem()'>
+		</form>
+		<label ng-show='newFoodItem'>Currently typing: </label><span ng-bind='newFoodItem'>{{newFoodItem}}</span>
+	</div>
+
+	<div>
+		<input type="text" id='filter' placeholder='filter...' ng-model='search'>
+		<ul ng-show='foodItems.length'>
+			<li ng-repeat='food in foodItems | filter:search:startsWith'>{{ food }}</li>
+		</ul>
+	</div>
+</body>
+</html>
+
+
