@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='productsApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>ControllingProducts</title>
+	<script src='bower_components/angular/angular.js'></script>
+	<link rel="stylesheet" href="style.css">
+	<script>
+		//create module
+		var productModule = angular.module('productsApp',[]);
+		
+		//create factory and attach to module
+		productModule.factory('productFactory',['$http', function($http){
+			var factory = {};
+			var products = [];
+
+			factory.index = function(callback){
+				callback(products);
+			}
+
+			factory.getProducts = function(callback){
+				callback(products);
+			}
+
+			factory.create = function(newProd, callback){
+				products.push(newProd);
+				callback(products);
+			}
+			return factory;
+		}]);
+
+		//create controller and attach to module
+		productModule.controller('productController', ['$scope', 'productFactory', function ($scope, productFactory){
+			
+			function getProducts(data){
+				$scope.products = data;
+				$scope.newProd = {};
+			}
+
+			$scope.products = {};
+			$scope.newProd = {};
+
+			$scope.index = function(){
+				productFactory.index(getProducts);
+			}
+			
+			$scope.createProduct = function(){
+				productFactory.create($scope.newProd, getProducts);
+			}
+			
+			$scope.deleteProduct = function(index){
+			    $scope.products.splice(index, 1);			 
+			}
+
+		}]);
+	</script>
+
+</head>
+<body ng-controller='productController'>
+	<div class="container">
+		<fieldset>
+			<legend>Products Controller</legend>
+			<form>
+				
+					<div>
+						<label for="name">Product Name</label>
+						<label for="price">Product Price</label>
+					</div>
+					<div>
+						<input type="text" name='name' id='name' ng-model='newProd.name'>
+						<input type="text"  name='price' id='price' ng-model='newProd.price'>
+					</div>
+					<div>
+						<input type='submit' value='Add Product' ng-click='createProduct()'>
+					</div>
+				
+			</form>
+
+			<table>
+				<thead>
+					<tr ng-class-even="'odd'">
+						<th>Name</th>
+						<th>Price</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody ng-show='products.length' >
+					<!-- generate table rows here -->
+					<tr ng-repeat="prod in products" ng-class-odd="'odd'" ng-class-even="'even'">
+						<td>{{ prod.name }}</td>
+						<td>{{ prod.price | currency }}</td>
+
+						<td><button ng-click="deleteProduct($index)">Delete Product</button></td>					
+					</tr>
+				</tbody>
+			</table>
+
+		</fieldset>
+	</div>
+</body>
+</html>
