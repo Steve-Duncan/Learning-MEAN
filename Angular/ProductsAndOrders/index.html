@@ -4,82 +4,11 @@
 	<meta charset="UTF-8">
 	<title>ControllingProducts</title>
 	<script src='bower_components/angular/angular.js'></script>
-	<link rel="stylesheet" href="style.css">
-	<script>
-		//create module
-		var productModule = angular.module('productsApp',[]);
-		
-		//create factory and attach to module
-		productModule.factory('productFactory',['$http', function($http){
-			var factory = {};
-			var products = [];
-
-			factory.index = function(callback){
-				callback(products);
-			}
-
-			factory.getProducts = function(callback){
-				callback(products);
-			}
-
-			factory.create = function(newProd, callback){
-				newProd.available = 50;
-				products.push(newProd);
-				callback(products);
-			}
-
-			factory.buyProduct = function(index, callback){
-				if (products[index].available > 0){
-					products[index].available -= 1;
-				}
-				callback(products);
-			}
-			return factory;
-		}]);
-
-		//create controller and attach to module
-		productModule.controller('productController', ['$scope', 'productFactory', function ($scope, productFactory){
-			
-			function getProducts(data){
-				$scope.products = data;
-				$scope.newProd = {};
-			}
-
-			$scope.products = {};
-			$scope.newProd = {};
-
-			$scope.index = function(){
-				productFactory.index(getProducts);
-			}
-			
-			$scope.createProduct = function(){
-				productFactory.create($scope.newProd, getProducts);
-			}
-			
-			$scope.deleteProduct = function(index){
-			    $scope.products.splice(index, 1);			 
-			}
-		}]);
-
-		//create controller and attach to module
-		productModule.controller('orderController', ['$scope', 'productFactory', function ($scope, productFactory){
-			
-			function getProducts(data){
-				$scope.products = data;
-				$scope.newProd = {};
-			}
-
-			$scope.products = {};
-			$scope.newProd = {};
-
-			productFactory.index(getProducts);
-
-			$scope.buyProduct = function(index){
-				productFactory.buyProduct(index, getProducts);
-			}
-
-		}]);
-	</script>
+	<script src='main.js'></script>
+	<script src='factories/factory.js'></script>
+	<script src='controllers/productController.js'></script>
+	<script src='controllers/orderController.js'></script>
+	<link rel="stylesheet" href="styles/style.css">
 
 </head>
 <body>
