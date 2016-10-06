@@ -4,10 +4,10 @@ var app = angular.module('usersApp',['ngRoute']);
 app.config(function($routeProvider){
 	$routeProvider
 		.when('/',{
-			templateUrl: 'partials/listUsers.html'
-		})
-		.when('/customizeUsers',{
 			templateUrl: 'partials/customizeUsers.html'
+		})
+		.when('/listUsers',{
+			templateUrl: 'partials/listUsers.html'
 		})
 		.otherwise({
 			redirectTo: '/'
@@ -44,17 +44,19 @@ app.factory('userFactory',['$http', function($http){
 
 
 //create users controller and attach to module
-app.controller('UsersController', ['$scope', 'userFactory', function ($scope, userFactory){
+app.controller('UsersController', ['$scope', 'userFactory', '$location', function ($scope, userFactory, $location){
 	
 	function getUsers(data){
 		$scope.users = data;
-		$scope.newUser = {};
+		// $scope.newUser = {};
 	}
 
+	userFactory.index(getUsers);
 
 	$scope.createUser = function(){
 		userFactory.create($scope.newUser, getUsers);
 		$scope.newUser = {};
+		$location.url('/listUsers')
 	}
 
 	$scope.deleteUser = function(index){
@@ -64,7 +66,7 @@ app.controller('UsersController', ['$scope', 'userFactory', function ($scope, us
 }]);
 
 //create list controller and attach to module
-app.controller('ListUsersController', ['$scope', 'userFactory',  function ($scope, userFactory){
+app.controller('ListController', ['$scope', 'userFactory',  function ($scope, userFactory){
 	function getUsers(data){
 		$scope.users = data;
 		$scope.newUser = {};
