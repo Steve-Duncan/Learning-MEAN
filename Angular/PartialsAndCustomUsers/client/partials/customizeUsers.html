@@ -1,0 +1,43 @@
+
+<fieldset ng-controller='UsersController'>
+	<legend>Users Controller</legend>
+	<form>
+		
+			<div>
+				<label for="fname">First Name</label>
+				<label for="lname">Last Name</label>
+				<label for="lang">Favorite Language</label>
+			</div>
+			<div>
+				<input type="text" name='fname' id='fname' ng-model='newUser.fname'>
+				<input type="text"  name='lname' id='lname' ng-model='newUser.lname'>
+				<input type="text" name='lang' id='lang' ng-model='newUser.lang'>
+			</div>
+			<div>
+				<input type='submit' value='Create User' ng-click='createUser()'>
+			</div>
+		
+	</form>
+
+	<table>
+		<thead>
+			<tr ng-class-even="'odd'">
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Fav Language</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody ng-show='users.length' >
+			<!-- generate table rows here -->
+			<tr ng-repeat="user in users" ng-class-odd="'odd'" ng-class-even="'even'">
+				<td>{{ user.fname }}</td>
+				<td>{{ user.lname }}</td>
+				<td>{{ user.lang }}</td>
+
+				<td><button ng-click="deleteUser($index)">Delete User</button></td>					
+			</tr>
+		</tbody>
+	</table>
+
+</fieldset>

@@ -1,0 +1,18 @@
+
+<table ng-controller='ListUsersController'>
+	<thead>
+		<tr ng-class-even="'odd'">
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Fav Language</th>
+		</tr>
+	</thead>
+	<tbody ng-show='users.length' >
+		<!-- generate table rows here -->
+		<tr ng-repeat="user in users" ng-class-odd="'odd'" ng-class-even="'even'">
+			<td>{{ user.fname }}</td>
+			<td>{{ user.lname }}</td>
+			<td>{{ user.lang }}</td>
+		</tr>
+	</tbody>
+</table>
