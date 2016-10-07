@@ -1,0 +1,29 @@
+<form>
+		
+	<div>
+		<label for="name">Name</label>
+	</div>
+	<div>
+		<input type="text" name='name' id='name' ng-model='newTeam.name'>
+	</div>
+	<div>
+		<input type='submit' value='Add New Team' ng-click='createTeam()'>
+	</div>
+	
+</form>
+
+	<table>
+		<thead>
+			<tr ng-class-even="'odd'">
+				<th>Name</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody ng-show='teams.length' >
+			<!-- generate table rows here -->
+			<tr ng-repeat="team in teams" ng-class-odd="'odd'" ng-class-even="'even'">
+				<td>{{ team.name }}</td>
+				<td><button ng-click="deleteTeam($index)">Remove Team</button></td>					
+			</tr>
+		</tbody>
+	</table>

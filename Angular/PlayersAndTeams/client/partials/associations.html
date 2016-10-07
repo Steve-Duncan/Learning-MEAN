@@ -1,0 +1,40 @@
+<form>
+		
+	<div>
+		<label for="name">Name</label>
+		<label for="team">Team</label>
+	</div>
+	<div>
+		<select ng-model='newAssoc.player'>		
+			<option ng-repeat='player in players' value='{{$index}}'>{{ player.name }}</option>
+		</select>
+
+		<select ng-model='newAssoc.team'>		
+			<option ng-repeat='team in teams' value='{{team.name}}'>{{ team.name }}</option>
+		</select>
+
+		
+	</div>
+	<div>
+		<input type='submit' value='Assign Player' ng-click='addPlayerToTeam()'>
+	</div>
+	
+</form>
+
+	<table>
+		<thead>
+			<tr ng-class-even="'odd'">
+				<th>Name</th>
+				<th>Team</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody ng-show='players.length' >
+			<!-- generate table rows here -->
+			<tr ng-repeat="player in players" ng-class-odd="'odd'" ng-class-even="'even'">
+				<td>{{ player.name }}</td>
+				<td>{{ player.team }}</td>
+				<td><button ng-click="deleteTeam($index)">Clear Assignment</button></td>					
+			</tr>
+		</tbody>
+	</table>

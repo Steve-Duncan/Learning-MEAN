@@ -1,0 +1,29 @@
+<form ng-controller='PlayersController'>
+		
+	<div>
+		<label for="name">Name</label>
+	</div>
+	<div>
+		<input type="text" name='name' id='name' ng-model='newPlayer.name'>
+	</div>
+	<div>
+		<input type='submit' value='Add Player' ng-click='createPlayer()'>
+	</div>
+	
+</form>
+
+	<table>
+		<thead>
+			<tr ng-class-even="'odd'">
+				<th>Name</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody ng-show='players.length' >
+			<!-- generate table rows here -->
+			<tr ng-repeat="player in players" ng-class-odd="'odd'" ng-class-even="'even'">
+				<td>{{ player.name }}</td>
+				<td><button ng-click="deletePlayer($index)">Remove Player</button></td>					
+			</tr>
+		</tbody>
+	</table>
