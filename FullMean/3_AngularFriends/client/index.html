@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- DONT FORGET TO ADD YOUR ANGULAR APP! -->
+<html lang="en" ng-app='friendsApp'>
+	<head>
+		<meta charset="utf-8">
+		<title>Angular Friends</title>
+		<script src="/angular/angular.js" charset="utf-8"></script>
+		<script src="/angular-route/angular-route.js" charset="utf-8"></script>
+		<script src="/assets/app.js" charset="utf-8"></script>
+		<!-- <script src='angular-messages/angular-messages.js'></script>
+		<script src='config/routes.js'></script>
+		<script src = 'main.js'></script>
+		<link rel="stylesheet" href="styles/style.css"> -->
+	</head>
+	<body>
+		<h1>This is the Index Page</h1>
+		<!-- Links to your new and edit pages here.  Review Angular Partials if you've forgotten ) -->
+		<button><a href="#/new">Add new friend</a></button>
+		<div class="container" ng-view=''>
+		
+		</div> 
+	</body>
+</html>
