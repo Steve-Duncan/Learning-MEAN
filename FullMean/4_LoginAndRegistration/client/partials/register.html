@@ -1,0 +1,22 @@
+<h2 >This is the register partial</h2>
+
+<form ng-submit="register()">
+	<div ng-if="loginError">
+		<strong>Error!</strong> {{ loginError }}
+	</div>
+	<label for="email">Email Address</label>
+	<input type="email" placeholder="Email address" ng-model="newUser.email">
+	<label for="first_name">First Name</label>
+	<input type="first_name" placeholder="first_name" ng-model="newUser.first_name">
+	<label for="last_name">Last Name</label>
+	<input type="last_name" placeholder="last_name" ng-model="newUser.last_name">
+	<label for="birthday">Birthday</label>
+	<input type="birthday" placeholder="birthday" ng-model="newUser.birthday">
+	<label for="password">Password</label>
+	<input type="password"ng-model="newUser.password">
+	<label for="password_confirm">Password Confirm</label>
+	<input type="password_confirm" placeholder="password_confirm" ng-model="newUser.password_confirm">
+	<button type="submit">Register</button>
+</form>
+
+<h4>Already registered? <a href="#/login">Click</a> to login!</h4>

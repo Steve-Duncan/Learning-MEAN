@@ -1,0 +1,13 @@
+<h2 >This is the login partial</h2>
+<form ng-submit="login()">
+	<div ng-if="loginError">
+		<strong>Error!</strong> {{ loginError }}
+	</div>
+	<label for="email">Email Address</label>
+	<input type="email" placeholder="Email address" ng-model="loginUser.email">
+	<label for="password">Password</label>
+	<input type="password"ng-model="loginUser.password">
+	<button type="submit">Sign in</button>
+</form>
+
+<h4>Not registered yet? <a href="#/register">Click</a> to register!</h4>
