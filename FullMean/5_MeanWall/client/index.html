@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+<head>
+	<meta charset="UTF-8">
+	<title>Mean Wall</title>
+
+	<script type="text/javascript" src="/angular/angular.js"></script>
+	<script type="text/javascript" src="/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="/angular-cookies/angular-cookies.js"></script>
+	<script type="text/javascript" src="/angular-messages/angular-messages.js"></script>
+	
+	<script type="text/javascript" src="/assets/app.js"></script>
+
+	<script type="text/javascript" src="/assets/factories/userFactory.js"></script>
+	<script type="text/javascript" src="/assets/factories/wallFactory.js"></script>
+
+	<script type="text/javascript" src="/assets/controllers/UserController.js"></script>
+	<script type="text/javascript" src="/assets/controllers/WallController.js"></script>
+
+</head>
+<body>
+	<!-- <h1>This is the index page</h1> -->
+
+	<div ng-view=''>
+		<!-- partials will render here -->
+	</div>
+</body>
+</html>

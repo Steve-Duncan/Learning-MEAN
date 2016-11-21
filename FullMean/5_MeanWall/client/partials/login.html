@@ -1,0 +1,38 @@
+
+<section >
+	<h2 >Login</h2>
+
+	<link href="./static/css/base.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="./static/css/style_register.css" rel="stylesheet" type="text/css" media="screen">
+
+	<form class="register-form" ng-submit="login()">
+
+		<div ng-if="loginError">
+			<div class="alert alert-danger fade in">
+				<strong>Error!</strong> {{ loginError }}
+			</div>
+		</div>
+
+		<section class=" form-group">
+
+			<ul class=" form-fields">	
+				<li>
+					<label for="username">Username</label>
+					<input type="text" placeholder="username" ng-model="loginUser.username">
+				</li>
+				
+				<li>
+					<label for="password">Password</label>
+					<input type="password" placeholder="password" ng-model="loginUser.password">
+				</li>
+				
+			</ul>
+		</section>
+		<section class="form-submit">
+			<button type="submit" class="register-btn">Sign in</button>
+		</section>
+	</form>
+	<h5>Not registered yet? <a href="#/register">Click here</a> to register!</h5>
+</section>
+
+

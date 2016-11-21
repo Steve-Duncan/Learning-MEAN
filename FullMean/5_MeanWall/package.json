@@ -1,0 +1,22 @@
+{
+  "name": "mean_wall",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "latest",
+    "express": "^4.14.0",
+    "express-session": "latest",
+    "moment": "^2.16.0",
+    "mongoose": "latest",
+    "mongoose-unique-validator": "^1.0.2"
+  }
+}

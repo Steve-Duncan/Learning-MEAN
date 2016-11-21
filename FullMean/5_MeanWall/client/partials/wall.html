@@ -1,0 +1,48 @@
+<link href="./static/css/base.css" rel="stylesheet" type="text/css" media="screen">
+<link href="./static/css/style_wall.css" rel="stylesheet" type="text/css" media="screen">
+
+<nav>
+	<h1>Full MEAN Wall</h1>
+	
+		<h2>Welcome {{ username }}!</h2>
+		<button><a href="#" ng-click="logout()">Sign Out</a></button></h4>
+	
+</nav>
+
+<hr>
+
+<section class='wall'>
+
+	<form class='message-form form-fields' ng-submit="create_post()">
+		<div ng-if="postError">
+			<div ng-repeat="error in postError" class="alert alert-danger fade in">
+				<strong>Error!</strong> {{ error.message }}
+			</div>
+		</div>
+		<label for="message">Post a message:</label>
+		<span><textarea name="message" ng-model='newPost.message'></textarea>
+		<button type='submit'>Post a Message</button></span>
+	</form>
+
+	<div class='message-view' ng-repeat="post in posts | orderBy: '-createdAt'">
+		<p>{{ post.username}} - {{ post.updatedAt | date:"h:mm a M/d/yy" }}</p>
+		<p>{{ post.post }}</p>
+		<div class='comment-view' ng-repeat="comment in post.comments | orderBy: '-createdAt'">
+			<!-- <p>New comment added to post id: {{ post._id }}</p> -->
+			<p>{{ comment.username }} - {{ comment.updatedAt | date:"h:mm a M/d/yy" }}</p>
+			<p>{{ comment.comment }}</p>
+
+		</div>
+		<form class='comment-form form-fields' ng-submit="create_comment($index)">
+			<div ng-if="commentError">
+				<div ng-repeat="error in commentError" class="alert alert-danger fade in">
+					<strong>Error!</strong> {{ error.message }}
+				</div>
+			</div>
+			<label for="comment">Post a comment:</label>
+			<span><textarea name="comment" ng-model='post.newComment'></textarea></span>
+			<span><button type='submit'>Post a comment</button></span>
+		</form>
+	</div>
+	
+</section>
